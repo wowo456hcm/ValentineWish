@@ -9,21 +9,21 @@
     <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
     <link rel="stylesheet" href="style/style.css" />
     <style>
-      /* Ẩn tất cả nội dung ban đầu */
+      /* Ẩn toàn bộ nội dung ban đầu */
       .container {
         display: none;
       }
     </style>
   </head>
 
-  <audio id="myAudio">
-    <source src="https://www.kumeiwp.com/wj/192112/2024/01/06/a087786db0a11d71a75a30159af80f10.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
-  <button onclick="startPage()">Play Music</button>
-
   <body>
+    <audio id="myAudio">
+      <source src="https://www.kumeiwp.com/wj/192112/2024/01/06/a087786db0a11d71a75a30159af80f10.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button onclick="startPage()">Play Music</button>
+
     <div class="container" id="content">
       <!-- Nội dung trang web của bạn sẽ được đặt ở đây -->
       <div class="one">
@@ -63,7 +63,7 @@
         </p>
       </div>
       <div class="six">
-        <img src="img/vector.jpg" alt="" class = "girl-dp" id="imagePath" />
+        <img src="img/vector.jpg" alt="" class="girl-dp" id="imagePath" />
         <div class="wish">
           <h3 class="wish-hbd">情人節快樂</h3>
           <h5 id="wishText">kuch kuch</h5>
@@ -85,7 +85,6 @@
         <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <circle cx="20" cy="20" r="20" />
         </svg>
-        <!-- Các phần SVG khác -->
       </div>
       <div class="nine">
         <p>Giờ thì xoay qua bên đây nè.</p>
@@ -97,10 +96,16 @@
     <script>
       function startPage() {
         // Phát nhạc
-        document.getElementById('myAudio').play();
-
-        // Hiển thị nội dung trang web
-        document.getElementById('content').style.display = 'block';
+        var audio = document.getElementById('myAudio');
+        
+        // Đảm bảo âm thanh bắt đầu và không bị chặn
+        audio.play().then(() => {
+          // Khi nhạc bắt đầu chơi, hiển thị nội dung
+          document.getElementById('content').style.display = 'block';
+        }).catch((err) => {
+          // Nếu gặp lỗi (chặn âm thanh tự động), hãy báo lỗi
+          alert("Bị chặn phát nhạc tự động, vui lòng cho phép âm thanh trong trình duyệt!");
+        });
       }
     </script>
   </body>
