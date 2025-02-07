@@ -301,12 +301,4 @@ const resolveFetch = () => {
     resolve("Fetch done!");
   });
 };
-<script>
-  document.addEventListener("click", function () {
-    let audio = document.getElementById("bg-music");
-    if (audio.paused) {
-      audio.play();
-    }
-  }, { once: true }); // Chỉ kích hoạt một lần khi người dùng click
-</script>
 resolveFetch().then(animationTimeline());
