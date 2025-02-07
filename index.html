@@ -10,10 +10,10 @@
   <style>
     /* CSS để căn giữa nút */
     #playButton {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: fixed;
+      bottom: 20px; /* Đặt cách đáy trang 20px */
+      left: 50%; /* Đặt ngang giữa màn hình */
+      transform: translateX(-50%); /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
       padding: 20px 40px;
       background-color: #ff69b4;
       color: white;
@@ -22,6 +22,7 @@
       cursor: pointer;
       border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 9999; /* Đảm bảo nút sẽ nằm trên các phần tử khác */
     }
   </style>
 </head>
