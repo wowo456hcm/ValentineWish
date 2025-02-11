@@ -29,9 +29,9 @@ const animationTimeline = () => {
 
   const tl = new TimelineMax();
 
-  // tl.to(".container", 0.1, {  //Remove this line
-  //   visibility: "visible",
-  // })
+  tl.to(".container", 0.1, {
+    visibility: "visible",
+  })
     .from(".one", 0.7, {
       opacity: 0,
       y: 10,
@@ -307,32 +307,22 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("DOMContentLoaded event fired");
   console.log("Button click event listener added");
   const playButton = document.getElementById('playButton');
-  const musicSelect = document.getElementById('musicSelect'); // Get reference to the select element
-  console.log("Playbutton is", playButton);
-    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+  var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
     audio.preload = 'auto';
-  // Load the data to customize even before the click of button, for music
-  fetchData();
-  playButton.addEventListener('click', function() {
-      console.log("Button click");
-    console.log("resolveFetch() called"); 
-    // Start the animation and fetch data
-    document.querySelector(".container").style.display = "block"; //Make the container visible
-      // Play audio
-         // Get selected music track
-    const selectedTrackIndex = musicSelect.value;
-    const selectedTrack = customizeData.musicTracks[selectedTrackIndex];
 
-    // Update audio source and play
-    audio.src = selectedTrack.path;
+  playButton.addEventListener('click', function() {
+    console.log("resolveFetch() called");
+    // Start the animation and fetch data
+    var containerElement = document.querySelector(".container");
+    containerElement.style.display = "block";
     audio.play();
-      this.style.display = 'none';  // Ẩn nút
+    this.style.display = 'none';  // Ẩn nút
+
     resolveFetch().then(() => {
       animationTimeline();
       // Play audio
-     
     });
     // Hide the play button
-  
+    
   });
 });
