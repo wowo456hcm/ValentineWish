@@ -156,37 +156,32 @@
 
     <!-- JavaScript để phát nhạc và ẩn nút -->
     <script>
-        var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-        var giftCardContainer = document.getElementById('giftCardContainer');
-        var container = document.querySelector('.container');
+     var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+     var giftCardContainer = document.getElementById('giftCardContainer');
+     var container = document.querySelector('.container');
 
-        // Function to start the animation and music
-        function startEverything() {
-            audio.play(); // Play music
-            giftCardContainer.style.display = 'none'; // Hide the gift card
-            console.log("startEverything() called - music playing, gift card hidden"); //Debugging
+     // Function to start the animation and music
+     function startEverything() {
+         audio.play(); // Play music
+         giftCardContainer.style.display = 'none'; // Hide the gift card
+         console.log("startEverything() called - music playing, gift card hidden"); //Debugging
 
-            // Wait for images to load, then fetch data and start animation
-            window.resolveFetch().then(() => {
-                window.createAnimationTimeline();
-                console.log("Animation timeline created and (hopefully) running"); //More Debugging
-            });
-        }
+         // Wait for images to load, then fetch data and start animation
+         window.resolveFetch().then(() => {
+             window.createAnimationTimeline();
+             console.log("Animation timeline created and (hopefully) running"); //More Debugging
+         });
+     }
 
-        // Add event listener to the gift card container
-        giftCardContainer.addEventListener('click', startEverything);
+     $(document).ready(function() {
+         $("#giftCardContainer").click(function() {
+             $(".card").stop().animate({
+                 top: "-120px" // Fly a little higher
+             }, "slow");
+             startEverything(); // Start the main animation too
 
-        $(document).ready(function() {
-            $("#giftCardContainer").mouseenter(function() {
-                $(".card").stop().animate({
-                    top: "-90px"
-                }, "slow");
-            }).mouseleave(function() {
-                $(".card").stop().animate({
-                    top: 0
-                }, "slow");
-            });
-        });
-    </script>
+         });
+     });
+ </script>
 </body>
 </html>
