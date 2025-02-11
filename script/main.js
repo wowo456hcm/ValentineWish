@@ -18,7 +18,9 @@ const animationTimeline = () => {
     rotationX: 5,
     skewX: "15deg",
   };
-
+  window.addEventListener('load', function() {
+  var audio = document.getElementById('backgroundMusic');
+  audio.muted = false;
   const ideaTextTransLeave = {
     opacity: 0,
     y: 20,
