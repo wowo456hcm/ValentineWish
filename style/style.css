@@ -12,10 +12,9 @@ body {
   width: 100vh;
   margin: 0 auto;
   text-align: center;
+  visibility: hidden;
   position: relative;
   overflow: hidden;
-  display: none; /* Hide the container initially */
-  /* visibility: hidden; */
 }
 
 .container div.six {
@@ -92,7 +91,6 @@ body {
   left: 0;
   right: 0;
 }
-
 
 .idea-3 strong {
   padding: 3px 5px;
