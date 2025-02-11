@@ -1,151 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Cập nhật thumbnail hình ảnh -->
-  <meta property="og:image" content="img/IMG_1593.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <title>雲雲點我!</title>
-  <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
-  <link rel="stylesheet" href="style/style.css" />
-  <style>
-    /* CSS để căn giữa nút */
-    #playButton {
-      position: fixed;
-      bottom: 20px; /* Đặt cách đáy trang 20px */
-      left: 50%; /* Đặt ngang giữa màn hình */
-      transform: translateX(-50%); /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
-      padding: 20px 40px;
-      background-color: #ff69b4;
-      color: white;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 9999; /* Đảm bảo nút sẽ nằm trên các phần tử khác */
-    }
-  </style>
-</head>
-<body>
+// Animation Timeline
+const animationTimeline = () => {
+  // Spit chars that needs to be animated individually
+  const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
+  const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-  <!-- Nút phát nhạc -->
-  <button id="playButton">Bấm tui!</button>
+  textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+    .split("")
+    .join("</span><span>")}</span`;
 
-  <!-- Nội dung chính của trang -->
-  <div class="container">
-    <div class="one">
-      <h1 class="one">
-        <span id="name"></span>
-      </h1>
-      <p class="two" id="greetingText">Cô gái xinh đẹp!</p>
-    </div>
-    <div class="three">
-      <p>Hôm nay là ngày Valentine đầu tiên của tụi mình!!! :D</p>
-    </div>
-    <div class="four">
-      <div class="text-box">
-        <p class="hbd-chatbox">
-          Chúc bạn một ngày Valentine tràn đầy niềm vui và hạnh phúc.
-        </p>
-        <p class="fake-btn">♥雲雲♥</p>
-      </div>
-    </div>
-    <div class="five">
-      <p class="idea-1">Valentine này, tui không cần gì nhiều</p>
-      <p class="idea-2">chỉ cần được bên bạn.</p>
-      <p class="idea-3">
-        Cảm ơn bạn đã đến và cho tui cơ hội đồng hành cùng bạn.
-      </p>
-      <p class="idea-4">Dù là Valentine hay bất kỳ ngày nào khác,</p>
-      <p class="idea-5">
-        tui mong bạn luôn <strong>hạnh phúc</strong> và <strong>vui vẻ</strong>!
-        <span>:)</span>
-      </p>
-      <p class="idea-6">
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-      </p>
-    </div>
-    <div class="six">
-      <img src="img/vector.jpg" alt="Girl Image" class="girl-dp" id="imagePath" />
-      <div class="wish">
-        <h3 class="wish-hbd">情人節快樂</h3>
-        <h5 id="wishText">kuch kuch</h5>
-      </div>
-    </div>
-    <div class="seven">
-      <div class="baloons">
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/smiling.svg" alt="Smiling Face" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/music-note.svg" alt="Music Note" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/happy.svg" alt="Happy Face" />
-        <img src="img/smiling.svg" alt="Smiling Face" />
-      </div>
-    </div>
-    <div class="eight">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-    </div>
-    <div class="nine">
-      <p>Giờ thì xoay qua đây nhận quà nè!</p>
-      <p id="replay">Bấm vô đây để xem lại nha.</p>
-      <p class="last-smile">:)</p>
-    </div>
-  </div>
+  hbd.innerHTML = `<span>${hbd.innerHTML
+    .split("")
+    .join("</span><span>")}</span`;
 
-  <!-- Thư viện JavaScript -->
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  <script type="text/babel" src="script/main.js"></script>
+  const ideaTextTrans = {
+    opacity: 0,
+    y: -20,
+    rotationX: 5,
+    skewX: "15deg",
+  };
 
-  <!-- JavaScript để phát nhạc và ẩn nút -->
-  <script>
-    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-    
-    // Xử lý sự kiện khi bấm nút
-    document.getElementById('playButton').addEventListener('click', function() {
-      audio.play();  // Phát nhạc
-      this.style.display = 'none';  // Ẩn nút
+  const ideaTextTransLeave = {
+    opacity: 0,
+    y: 20,
+    rotationY: 5,
+    skewX: "-15deg",
+  };
+
+  const tl = new TimelineMax();
+
+  tl.to(".container", 0.1, {
+    visibility: "visible",
+  })
+    .from(".one", 0.7, {
+      opacity: 0,
+      y: 10,
+    })
+    .from(".two", 0.4, {
+      opacity: 0,
+      y: 10,
+    })
+    .to(
+      ".one",
+      0.7,
+      {
+        opacity: 0,
+        y: 10,
+      },
+      "+=2.5"
+    )
+    .to(
+      ".two",
+      0.7,
+      {
+        opacity: 0,
+        y: 10,
+      },
+      "-=1"
+    )
+    .from(".three", 0.7, {
+      opacity: 0,
+      y: 10,
+      // scale: 0.7
+    })
+    .to(
+      ".three",
+      0.7,
+      {
+        opacity: 0,
+        y: 10,
+      },
+      "+=2"
+    )
+    .from(".four", 0.7, {
+      scale: 0.2,
+      opacity: 0,
+    })
+    .from(".fake-btn", 0.3, {
+      scale: 0.2,
+      opacity: 0,
+    })
+    .staggerTo(
+      ".hbd-chatbox span",
+      0.5,
+      {
+        visibility: "visible",
+      },
+      0.05
+    )
+    .to(".fake-btn", 0.1, {
+      backgroundColor: "rgb(127, 206, 248)",
+    })
+    .to(
+      ".four",
+      0.5,
+      {
+        scale: 0.2,
+        opacity: 0,
+        y: -150,
+      },
+      "+=0.7"
+    )
+    .from(".idea-1", 0.7, ideaTextTrans)
+    .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-2", 0.7, ideaTextTrans)
+    .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-3", 0.7, ideaTextTrans)
+    .to(".idea-3 strong", 0.5, {
+      scale: 1.2,
+      x: 10,
+      backgroundColor: "rgb(21, 161, 237)",
+      color: "#fff",
+    })
+    .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-4", 0.7, ideaTextTrans)
+    .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(
+      ".idea-5",
+      0.7,
+      {
+        rotationX: 15,
+        rotationZ: -10,
+        skewY: "-5deg",
+        y: 50,
+        z: 10,
+        opacity: 0,
+      },
+      "+=0.5"
+    )
+    .to(
+      ".idea-5 span",
+      0.7,
+      {
+        rotation: 90,
+        x: 8,
+      },
+      "+=0.4"
+    )
+    .to(
+      ".idea-5",
+      0.7,
+      {
+        scale: 0.2,
+        opacity: 0,
+      },
+      "+=2"
+    )
+    .staggerFrom(
+      ".idea-6 span",
+      0.8,
+      {
+        scale: 3,
+        opacity: 0,
+        rotation: 15,
+        ease: Expo.easeOut,
+      },
+      0.2
+    )
+    .staggerTo(
+      ".idea-6 span",
+      0.8,
+      {
+        scale: 3,
+        opacity: 0,
+        rotation: -15,
+        ease: Expo.easeOut,
+      },
+      0.2,
+      "+=1"
+    )
+    .staggerFromTo(
+      ".baloons img",
+      2.5,
+      {
+        opacity: 0.9,
+        y: 1400,
+      },
+      {
+        opacity: 1,
+        y: -1000,
+      },
+      0.2
+    )
+    .from(
+      ".girl-dp",
+      0.5,
+      {
+        scale: 3.5,
+        opacity: 0,
+        x: 25,
+        y: -25,
+        rotationZ: -45,
+      },
+      "-=2"
+    )
+    .from(".hat", 0.5, {
+      x: -100,
+      y: 350,
+      rotation: -180,
+      opacity: 0,
+    })
+    .staggerFrom(
+      ".wish-hbd span",
+      0.7,
+      {
+        opacity: 0,
+        y: -50,
+        // scale: 0.3,
+        rotation: 150,
+        skewX: "30deg",
+        ease: Elastic.easeOut.config(1, 0.5),
+      },
+      0.1
+    )
+    .staggerFromTo(
+      ".wish-hbd span",
+      0.7,
+      {
+        scale: 1.4,
+        rotationY: 150,
+      },
+      {
+        scale: 1,
+        rotationY: 0,
+        color: "#ff69b4",
+        ease: Expo.easeOut,
+      },
+      0.1,
+      "party"
+    )
+    .from(
+      ".wish h5",
+      0.5,
+      {
+        opacity: 0,
+        y: 10,
+        skewX: "-15deg",
+      },
+      "party"
+    )
+    .staggerTo(
+      ".eight svg",
+      1.5,
+      {
+        visibility: "visible",
+        opacity: 0,
+        scale: 80,
+        repeat: 3,
+        repeatDelay: 1.4,
+      },
+      0.3
+    )
+    .to(".six", 0.5, {
+      opacity: 0,
+      y: 30,
+      zIndex: "-1",
+    })
+    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .to(
+      ".last-smile",
+      0.5,
+      {
+        rotation: 90,
+      },
+      "+=1"
+    );
+
+  // tl.seek("currentStep");
+  // tl.timeScale(2);
+
+  // Restart Animation on click
+  const replyBtn = document.getElementById("replay");
+  replyBtn.addEventListener("click", () => {
+    tl.restart();
+  });
+};
+
+// Import the data to customize and insert them into page
+const fetchData = () => {
+  fetch("customize.json")
+    .then((data) => data.json())
+    .then((data) => {
+      Object.keys(data).map((customData) => {
+        if (data[customData] !== "") {
+          if (customData === "imagePath") {
+            document
+              .getElementById(customData)
+              .setAttribute("src", data[customData]);
+          } else {
+            document.getElementById(customData).innerText = data[customData];
+          }
+        }
+      });
     });
-  </script>
-</body>
-</html>
+};
+
+// Run fetch and animation in sequence
+const resolveFetch = () => {
+  return new Promise((resolve, reject) => {
+    fetchData();
+    resolve("Fetch done!");
+  });
+};
+resolveFetch().then(animationTimeline());
