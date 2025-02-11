@@ -350,9 +350,6 @@ body {
     top: 5px;
     left: 15px;
     box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
-    display: flex; /* Added */
-    justify-content: center; /* Added */
-    align-items: center; /* Added */
 }
 
 .card:before {
@@ -367,13 +364,21 @@ body {
 }
 
 .text {
-    position: static; /* Changed */
+    position: absolute;
     font-family: 'Brush Script MT',
     cursive;
     font-size: 28px;
     text-align: center; /* Keep This */
-    line-height: 1.2; /* Change pixel to ratio */
+    line-height: 1.2;
     color: #003049;
+
+    /* Add these for more precise control */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for the element's size */
 }
 
 /* Heart Decoration */
