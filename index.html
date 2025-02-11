@@ -128,3 +128,18 @@
   <script type="text/babel" src="script/main.js"></script>
 </body>
 </html>
+// Chạy fetchData() trước để tải dữ liệu tùy chỉnh
+resolveFetch();
+
+// Bắt sự kiện khi nhấn nút "Mở quà"
+document.getElementById('startButton').addEventListener('click', function() {
+  // Phát nhạc
+  var audio = document.getElementById('backgroundMusic');
+  audio.play();
+
+  // Ẩn màn hình chào
+  document.getElementById('welcomeScreen').style.display = 'none';
+
+  // Bắt đầu hoạt ảnh
+  animationTimeline();
+});
