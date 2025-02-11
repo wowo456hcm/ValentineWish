@@ -298,7 +298,27 @@ const fetchData = () => {
             });
         });
 };
-
+<script>
+     $(document).ready(function () {
+        $("#giftCardContainer")
+          .mouseenter(function () {
+            $(".card").stop().animate(
+              {
+                top: "-90px",
+              },
+              "slow"
+            );
+          })
+          .mouseleave(function () {
+            $(".card").stop().animate(
+              {
+                top: 0,
+              },
+              "slow"
+            );
+          });
+      });
+</script>
 // Make resolveFetch globally available
 window.resolveFetch = fetchData;
 window.createAnimationTimeline = createAnimationTimeline;
