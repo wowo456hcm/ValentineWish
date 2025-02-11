@@ -32,7 +32,8 @@ const createAnimationTimeline = () => {
 
     tl = new TimelineMax();  // Assign to the global tl
 
-    tl.to(".container", 0.1, {
+    tl.set(".container", { visibility: "hidden" }) // Initially hide using GSAP
+      .to(".container", 0.1, {
         visibility: "visible",
     })
         .from(".one", 0.7, {
