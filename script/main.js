@@ -301,4 +301,22 @@ const resolveFetch = () => {
     resolve("Fetch done!");
   });
 };
-resolveFetch().then(animationTimeline());
+
+document.addEventListener('DOMContentLoaded', function() {
+  const playButton = document.getElementById('playButton');
+
+  playButton.addEventListener('click', function() {
+    // Start the animation and fetch data
+    resolveFetch().then(() => {
+      animationTimeline();
+      // Play audio
+      audio.play();
+    });
+    // Hide the play button
+    playButton.style.display = 'none';
+  });
+});
+
+// Preload audio
+var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+audio.preload = 'auto';
