@@ -1,4 +1,4 @@
- // Animation Timeline
+// Animation Timeline
 const animationTimeline = () => {
   console.log("animationTimeline called");
   // Spit chars that needs to be animated individually
@@ -307,20 +307,21 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("DOMContentLoaded event fired");
   console.log("Button click event listener added");
   const playButton = document.getElementById('playButton');
+    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+    audio.preload = 'auto';
 
   playButton.addEventListener('click', function() {
     console.log("resolveFetch() called"); 
     // Start the animation and fetch data
+    document.querySelector(".container").style.display = "block"; //Make the container visible
+      audio.play();
+      this.style.display = 'none';  // Ẩn nút
     resolveFetch().then(() => {
       animationTimeline();
       // Play audio
-      audio.play();
+     
     });
     // Hide the play button
-    playButton.style.display = 'none';
+  
   });
 });
-
-// Preload audio
-var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-audio.preload = 'auto';
