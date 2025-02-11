@@ -1,5 +1,9 @@
+// script/main.js
+
+let tl; // Declare tl outside the function scope
+
 // Animation Timeline
-const animationTimeline = () => {
+const createAnimationTimeline = () => {
     // Spit chars that needs to be animated individually
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
@@ -26,7 +30,7 @@ const animationTimeline = () => {
         skewX: "-15deg",
     };
 
-    const tl = new TimelineMax();
+    tl = new TimelineMax();  // Assign to the global tl
 
     tl.to(".container", 0.1, {
         visibility: "visible",
@@ -293,11 +297,3 @@ const fetchData = () => {
             });
         });
 };
-
-// Run fetch and animation in sequence
-const initialize = () => {
-  // Nothing here now, it's called by the button
-};
-
-// Don't run anything automatically, it is controlled by the button now
-//initialize();
