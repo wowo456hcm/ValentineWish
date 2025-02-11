@@ -14,31 +14,40 @@
   <link rel="stylesheet" href="style/style.css" />
   <style>
     /* CSS để căn giữa nút */
-    #startButton {
+    #giftCardContainer {
       position: fixed;
       bottom: 20px; /* Đặt cách đáy trang 20px */
       left: 50%; /* Đặt ngang giữa màn hình */
       transform: translateX(-50%); /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
-      padding: 20px 40px;
-      background-color: #ff69b4;
-      color: white;
-      font-size: 20px;
-      border: none;
+      width: 300px;
+      height: 250px;
       cursor: pointer;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 9999; /* Đảm bảo nút sẽ nằm trên các phần tử khác */
+      /* Add styling to match your gift card animation */
+      /* For Example */
+       /* You may need adjust style to match the old one, such as the same box-shadow and border-radius */
+      z-index: 9999; /* Đảm bảo nó sẽ nằm trên các phần tử khác */
     }
 
     .container {
       visibility: hidden; /* Initially hide the container */
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
-  <!-- Nút phát nhạc -->
-  <button id="startButton">Bấm tui để bắt đầu!</button>
+  <!-- Gift Card Animation Container -->
+  <div id="giftCardContainer">
+      <div class="valentines">
+          <div class="envelope"></div>
+          <div class="front"></div>
+          <div class="card">
+              <div class="text">Happy 😘<br>Birthday! 💐🤗</div>
+              <div class="heart"></div>
+          </div>
+      </div>
+      <div class="shadow"></div>
+  </div>
 
   <!-- Nội dung chính của trang -->
   <div class="container">
@@ -144,24 +153,44 @@
   <!-- JavaScript để phát nhạc và ẩn nút -->
   <script>
     var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-    var startButton = document.getElementById('startButton');
+    var giftCardContainer = document.getElementById('giftCardContainer');
     var container = document.querySelector('.container');
 
     // Function to start the animation and music
     function startEverything() {
       audio.play(); // Play music
-      container.style.visibility = 'visible'; // Show the container
-      startButton.style.display = 'none'; // Hide the start button
+      giftCardContainer.style.display = 'none'; // Hide the start button
 
-      // Call the function that starts the animation (assuming it's in main.js)
-      window.resolveFetch().then(() => {
-        window.createAnimationTimeline();
-      });
-
+      // Wait for images to load, then fetch data and start animation
+      window.imagesLoaded(container)
+        .then(() => window.resolveFetch())
+        .then(() => {
+          window.createAnimationTimeline();
+        });
     }
 
     // Add event listener to the start button
-    startButton.addEventListener('click', startEverything);
+    giftCardContainer.addEventListener('click', startEverything);
+
+    $(document).ready(function () {
+        $("#giftCardContainer")
+          .mouseenter(function () {
+            $(".card").stop().animate(
+              {
+                top: "-90px",
+              },
+              "slow"
+            );
+          })
+          .mouseleave(function () {
+            $(".card").stop().animate(
+              {
+                top: 0,
+              },
+              "slow"
+            );
+          });
+      });
   </script>
 </body>
 </html>
