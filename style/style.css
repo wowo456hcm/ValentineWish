@@ -12,15 +12,12 @@ body {
   width: 100vh;
   margin: 0 auto;
   text-align: center;
-  visibility: hidden;
   position: relative;
   overflow: hidden;
-}
-.container {
-  /* Existing styles */
   display: none; /* Hide the container initially */
-  autoAlpha: 0; //Hide the container initially
+  /* visibility: hidden; */
 }
+
 .container div.six {
   top: 10vh;
   z-index: 1;
@@ -96,10 +93,6 @@ body {
   right: 0;
 }
 
-.container {
-  //Keep your other styles
-  autoAlpha: 0; //Replaces visibility: 'hidden'
-}
 
 .idea-3 strong {
   padding: 3px 5px;
