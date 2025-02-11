@@ -1,15 +1,22 @@
-html {
+/* Định dạng chung cho tất cả các phần tử */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  font-family: "Work Sans", sans-serif;
+  padding: 0;
 }
 
+/* Định dạng cho phần thân trang */
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Container chính */
 .container {
-  height: 100vh;
-  width: 100vh;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
@@ -17,204 +24,96 @@ body {
   overflow: hidden;
 }
 
-.container div.six {
-  top: 10vh;
-  z-index: 1;
+/* Header */
+.header {
+  margin-top: 20px;
 }
 
-.container div.seven,
-.container div.eight {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
+.header h1 {
+  font-size: 4rem;
 }
 
-.container > div {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 20vh;
-}
-
-.one {
-  font-size: 4.5rem;
-}
-
-.one > img {
-  vertical-align: middle;
-  margin-bottom: 10px;
-  max-width: 100%;
-  height: auto;
-}
-
-.two {
-  font-size: 1.2rem;
+.header p {
+  font-size: 1.5rem;
   font-weight: lighter;
 }
 
-.three {
-  font-size: 3rem;
+/* Phần tin nhắn */
+.message {
+  font-size: 2.5rem;
+  margin: 20px 0;
 }
 
-.four .text-box {
-  width: 600px;
-  margin: 0 auto;
+/* Text Box */
+.text-box {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
   border: 3px solid #aaa;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   position: relative;
+  background-color: #f9f9f9;
 }
 
-.text-box p {
-  margin: 0;
+.text-box .hbd-chatbox {
   text-align: left;
-}
-
-.text-box span {
-  visibility: hidden;
+  font-size: 1.2rem;
 }
 
 .text-box .fake-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
   color: #fff;
   background-color: rgb(21, 161, 237);
-  padding: 5px 8px;
+  padding: 10px 15px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
-.five p {
-  font-size: 2rem;
-  position: absolute;
-  left: 0;
-  right: 0;
+/* Ý tưởng và lời chúc */
+.ideas p {
+  font-size: 1.8rem;
+  margin: 15px 0;
 }
 
-.idea-3 strong {
+.ideas strong {
   padding: 3px 5px;
   border-radius: 3px;
-  display: inline-block;
+  background-color: #ff69b4;
+  color: #fff;
 }
 
-.five .idea-5 {
-  font-size: 4rem;
+.ideas .hearts span {
+  font-size: 3rem;
+  color: #ff69b4;
+  animation: heartBeat 1s infinite;
 }
 
-.idea-5 span,
-.idea-6 span,
-.wish-hbd span {
-  display: inline-block;
-}
-
-.idea-6 span {
-  font-size: 15rem;
-}
-
-.six {
+/* Hình ảnh và lời chúc */
+.image-section {
   position: relative;
+  margin: 40px 0;
 }
 
-.six img {
-  display: inline-block;
+.image-section .girl-dp {
   max-width: 45%;
   height: auto;
+  border-radius: 10px;
 }
 
-.six .hat {
+.image-section .wish {
   position: absolute;
-  width: 80px;
-  top: -35px;
-  left: 41.5%;
-  /* transform: scale(0.1); */
-}
-
-.baloons img {
-  display: inline-block;
-  position: absolute;
-  width: 200px;
-}
-
-.baloons img:nth-child(even) {
-  left: 10%;
-}
-
-.baloons img:nth-child(odd) {
-  right: 10%;
-}
-
-.baloons img:nth-child(3n + 0) {
-  left: 30%;
-}
-
-.eight svg {
-  width: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  z-index: -1;
-}
-
-.eight svg:nth-child(1) {
-  top: 7vh;
-  left: 5vw;
-  fill: #bd6ecf;
-}
-
-.eight svg:nth-child(2) {
-  top: 23vh;
-  left: 35vw;
-  fill: #7dd175;
-}
-
-.eight svg:nth-child(3) {
-  top: 33vh;
-  left: 23vw;
-  fill: #349d8b;
-}
-
-.eight svg:nth-child(4) {
-  top: 43vh;
-  left: 57vw;
-  fill: #347a9d;
-}
-
-.eight svg:nth-child(5) {
-  top: 68vh;
-  left: 7vw;
-  fill: #c66053;
-}
-
-.eight svg:nth-child(6) {
-  top: 42vh;
-  left: 77vw;
-  fill: #bfaa40;
-}
-
-.eight svg:nth-child(7) {
-  top: 68vh;
-  left: 83vw;
-  fill: #e3bae8;
-}
-
-.eight svg:nth-child(8) {
-  top: 86vh;
-  left: 37vw;
-  fill: #8762cb;
-}
-
-.eight svg:nth-child(9) {
-  top: 94vh;
-  left: 87vw;
-  fill: #9a90da;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .wish-hbd {
   font-size: 3em;
   margin: 0;
-  /* text-transform: uppercase; */
+  color: #ff69b4;
 }
 
 .wish h5 {
@@ -223,78 +122,155 @@ body {
   margin: 10px 0 0;
 }
 
-.nine p {
+/* Bóng bay */
+.balloons {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.balloons img {
+  position: absolute;
+  width: 100px;
+  animation: floatUp 5s ease-in-out infinite;
+}
+
+.balloons img:nth-child(odd) {
+  left: 20%;
+  animation-duration: 4s;
+}
+
+.balloons img:nth-child(even) {
+  right: 20%;
+  animation-duration: 6s;
+}
+
+/* Trang trí */
+.decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.decorations svg {
+  position: absolute;
+  width: 25px;
+  visibility: hidden;
+  z-index: -1;
+}
+
+/* Định vị các vòng tròn trang trí */
+.decorations svg:nth-child(1) {
+  top: 7vh;
+  left: 5vw;
+}
+
+.decorations svg:nth-child(2) {
+  top: 23vh;
+  left: 35vw;
+}
+
+.decorations svg:nth-child(3) {
+  top: 33vh;
+  left: 23vw;
+}
+
+.decorations svg:nth-child(4) {
+  top: 43vh;
+  left: 57vw;
+}
+
+.decorations svg:nth-child(5) {
+  top: 68vh;
+  left: 7vw;
+}
+
+/* Kết luận */
+.conclusion p {
   font-size: 2rem;
   font-weight: lighter;
+  margin: 15px 0;
 }
 
 #replay {
   z-index: 3;
   cursor: pointer;
+  color: #ff69b4;
+  text-decoration: underline;
+}
+
+/* Hiệu ứng */
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes floatUp {
+  0% { bottom: -100px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { bottom: 100%; opacity: 0; }
 }
 
 /* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
   }
-}
 
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
+  .message {
+    font-size: 2rem;
   }
-}
 
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
+  .text-box {
     width: 90%;
   }
 
-  .four .text-box {
-    width: 90%;
-  }
-
-  .text-box .fake-btn {
-    right: 5px;
-    bottom: -38px;
-  }
-
-  .idea-5 span {
-    display: block;
-  }
-
-  .idea-6 span {
-    font-size: 10rem;
-  }
-
-  .six .hat {
-    width: 50px;
-    top: -20px;
+  .ideas p {
+    font-size: 1.5rem;
   }
 
   .wish-hbd {
-    font-size: 2.3em;
+    font-size: 2.5em;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  .nine p {
+  .conclusion p {
     font-size: 1.5rem;
-    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .message {
+    font-size: 1.8rem;
+  }
+
+  .ideas p {
+    font-size: 1.2rem;
+  }
+
+  .wish-hbd {
+    font-size: 2em;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
+  }
+
+  .hearts span {
+    font-size: 2rem;
+  }
+
+  .girl-dp {
+    max-width: 80%;
   }
 }
