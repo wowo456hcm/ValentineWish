@@ -31,6 +31,7 @@ body {
 }
 
 .container > div {
+  opacity: 0; /* Initially hide all direct children */
   position: absolute;
   left: 0;
   right: 0;
@@ -102,10 +103,15 @@ body {
   font-size: 4rem;
 }
 
+.four .text-box span {
+  visibility: hidden;
+}
+
 .idea-5 span,
 .idea-6 span,
 .wish-hbd span {
-  display: inline-block;
+    display: inline-block;
+    opacity: 0; /* Hide individual spans */
 }
 
 .idea-6 span {
