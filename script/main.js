@@ -32,8 +32,10 @@ const createAnimationTimeline = () => {
 
     tl = new TimelineMax();  // Assign to the global tl
 
-    tl.set(".container", { opacity: 0, visibility: "hidden" }) // Initially hide using GSAP
-      .to(".container", 0.1, { opacity: 1, visibility: "visible"  })
+    tl.set(".container", { visibility: "hidden" }) // Initially hide using GSAP
+      .to(".container", 0.1, {
+        visibility: "visible",
+    })
         .from(".one", 0.7, {
             opacity: 0,
             y: 10,
@@ -87,7 +89,6 @@ const createAnimationTimeline = () => {
             0.5,
             {
                 visibility: "visible",
-                opacity: 1
             },
             0.05
         )
@@ -137,7 +138,6 @@ const createAnimationTimeline = () => {
             {
                 rotation: 90,
                 x: 8,
-                opacity: 1,
             },
             "+=0.4"
         )
@@ -243,9 +243,6 @@ const createAnimationTimeline = () => {
             },
             "party"
         )
-        .from(".wish h5", 0.5, {
-            opacity: 0,
-        })
         .staggerTo(
             ".eight svg",
             1.5,
