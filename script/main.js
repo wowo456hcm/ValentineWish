@@ -307,16 +307,25 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("DOMContentLoaded event fired");
   console.log("Button click event listener added");
   const playButton = document.getElementById('playButton');
+  const musicSelect = document.getElementById('musicSelect'); // Get reference to the select element
   console.log("Playbutton is", playButton);
     var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
     audio.preload = 'auto';
-
+  // Load the data to customize even before the click of button, for music
+  fetchData();
   playButton.addEventListener('click', function() {
       console.log("Button click");
     console.log("resolveFetch() called"); 
     // Start the animation and fetch data
     document.querySelector(".container").style.display = "block"; //Make the container visible
-      audio.play();
+      // Play audio
+         // Get selected music track
+    const selectedTrackIndex = musicSelect.value;
+    const selectedTrack = customizeData.musicTracks[selectedTrackIndex];
+
+    // Update audio source and play
+    audio.src = selectedTrack.path;
+    audio.play();
       this.style.display = 'none';  // Ẩn nút
     resolveFetch().then(() => {
       animationTimeline();
