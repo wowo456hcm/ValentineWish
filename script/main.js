@@ -297,3 +297,7 @@ const fetchData = () => {
             });
         });
 };
+
+// Make resolveFetch globally available
+window.resolveFetch = fetchData;
+window.createAnimationTimeline = createAnimationTimeline;
