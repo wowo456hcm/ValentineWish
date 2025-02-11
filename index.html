@@ -1,177 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Cập nhật thumbnail hình ảnh -->
-  <meta property="og:image" content="img/IMG_1593.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <title>雲雲點我!</title>
-  <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
-  <link rel="stylesheet" href="style/style.css" />
-  <style>
-    /* CSS để căn giữa nút */
-    #giftCardContainer {
-      position: fixed;
-      bottom: 20px; /* Đặt cách đáy trang 20px */
-      left: 50%; /* Đặt ngang giữa màn hình */
-      transform: translateX(-50%); /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
-      width: 300px;
-      height: 250px;
-      cursor: pointer;
-      /* Add styling to match your gift card animation */
-      /* For Example */
-       /* You may need adjust style to match the old one, such as the same box-shadow and border-radius */
-      z-index: 9999; /* Đảm bảo nó sẽ nằm trên các phần tử khác */
-    }
+    <meta property="og:image" content="img/IMG_1593.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <title>雲雲點我!</title>
+    <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
+    <link rel="stylesheet" href="style/style.css" />
+    <style>
+        /* CSS để căn giữa nút */
+        #giftCardContainer {
+            position: fixed;
+            bottom: 20px;
+            /* Đặt cách đáy trang 20px */
+            left: 50%;
+            /* Đặt ngang giữa màn hình */
+            transform: translateX(-50%);
+            /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
+            width: 300px;
+            height: 250px;
+            /* You should check if the position is appropriate here */
+            cursor: pointer;
+            z-index: 9999;
+            /* Đảm bảo nó sẽ nằm trên các phần tử khác */
+        }
 
-    .container {
-      visibility: hidden; /* Initially hide the container */
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        .container {
+            visibility: hidden;
+            /* Initially hide the container */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+
 <body>
 
-  <!-- Gift Card Animation Container -->
-  <div id="giftCardContainer">
-      <div class="valentines">
-          <div class="envelope"></div>
-          <div class="front"></div>
-          <div class="card">
-              <div class="text">Happy 😘<br>Valentine! 💐🤗</div>
-              <div class="heart"></div>
-          </div>
-      </div>
-      <div class="shadow"></div>
-  </div>
+    <!-- Gift Card Animation Container -->
+    <div id="giftCardContainer">
+        <div class="valentines">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <div class="text">Happy 😘<br>Birthday! 💐🤗</div>
+                <div class="heart"></div>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </div>
 
-  <!-- Nội dung chính của trang -->
-  <div class="container">
-    <div class="one">
-      <h1 class="one">
-        <span id="name"></span>
-      </h1>
-      <p class="two" id="greetingText">Cô gái xinh đẹp!</p>
+    <!-- Nội dung chính của trang -->
+    <div class="container">
+        <div class="one">
+            <h1 class="one">
+                <span id="name"></span>
+            </h1>
+            <p class="two" id="greetingText">Cô gái xinh đẹp!</p>
+        </div>
+        <div class="three">
+            <p>Hôm nay là ngày Valentine đầu tiên của tụi mình!!! :D</p>
+        </div>
+        <div class="four">
+            <div class="text-box">
+                <p class="hbd-chatbox">
+                    Chúc bạn một ngày Valentine tràn đầy niềm vui và hạnh phúc.
+                </p>
+                <p class="fake-btn">♥雲雲♥</p>
+            </div>
+        </div>
+        <div class="five">
+            <p class="idea-1">Valentine này, tui không cần gì nhiều</p>
+            <p class="idea-2">chỉ cần được bên bạn.</p>
+            <p class="idea-3">
+                Cảm ơn bạn đã đến và cho tui cơ hội đồng hành cùng bạn.
+            </p>
+            <p class="idea-4">Dù là Valentine hay bất kỳ ngày nào khác,</p>
+            <p class="idea-5">
+                tui mong bạn luôn <strong>hạnh phúc</strong> và <strong>vui vẻ</strong>!
+                <span>:)</span>
+            </p>
+            <p class="idea-6">
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+            </p>
+        </div>
+        <div class="six">
+            <img src="img/vector.jpg" alt="Girl Image" class="girl-dp" id="imagePath" />
+            <div class="wish">
+                <h3 class="wish-hbd">情人節快樂</h3>
+                <h5 id="wishText">kuch kuch</h5>
+            </div>
+        </div>
+        <div class="seven">
+            <div class="baloons">
+                <img src="img/balloon.svg" alt="Balloon" />
+                <img src="img/smiling.svg" alt="Smiling Face" />
+                <img src="img/heart.svg" alt="Heart" />
+                <img src="img/balloon.svg" alt="Balloon" />
+                <img src="img/heart.svg" alt="Heart" />
+                <img src="img/balloon.svg" alt="Balloon" />
+                <img src="img/music-note.svg" alt="Music Note" />
+                <img src="img/heart.svg" alt="Heart" />
+                <img src="img/balloon.svg" alt="Balloon" />
+                <img src="img/happy.svg" alt="Happy Face" />
+                <img src="img/smiling.svg" alt="Smiling Face" />
+            </div>
+        </div>
+        <div class="eight">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" />
+            </svg>
+        </div>
+        <div class="nine">
+            <p>Giờ thì xoay qua đây nhận quà nè!</p>
+            <p id="replay">Bấm vô đây để xem lại nha.</p>
+            <p class="last-smile">:)</p>
+        </div>
     </div>
-    <div class="three">
-      <p>Hôm nay là ngày Valentine đầu tiên của tụi mình!!! :D</p>
-    </div>
-    <div class="four">
-      <div class="text-box">
-        <p class="hbd-chatbox">
-          Chúc bạn một ngày Valentine tràn đầy niềm vui và hạnh phúc.
-        </p>
-        <p class="fake-btn">♥雲雲♥</p>
-      </div>
-    </div>
-    <div class="five">
-      <p class="idea-1">Valentine này, tui không cần gì nhiều</p>
-      <p class="idea-2">chỉ cần được bên bạn.</p>
-      <p class="idea-3">
-        Cảm ơn bạn đã đến và cho tui cơ hội đồng hành cùng bạn.
-      </p>
-      <p class="idea-4">Dù là Valentine hay bất kỳ ngày nào khác,</p>
-      <p class="idea-5">
-        tui mong bạn luôn <strong>hạnh phúc</strong> và <strong>vui vẻ</strong>!
-        <span>:)</span>
-      </p>
-      <p class="idea-6">
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-        <span>♥</span>
-      </p>
-    </div>
-    <div class="six">
-      <img src="img/IMG_1593.jpg" alt="Girl Image" class="girl-dp" id="imagePath" />
-      <div class="wish">
-        <h3 class="wish-hbd">情人節快樂</h3>
-        <h5 id="wishText">kuch kuch</h5>
-      </div>
-    </div>
-    <div class="seven">
-      <div class="baloons">
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/smiling.svg" alt="Smiling Face" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/music-note.svg" alt="Music Note" />
-        <img src="img/heart.svg" alt="Heart" />
-        <img src="img/balloon.svg" alt="Balloon" />
-        <img src="img/happy.svg" alt="Happy Face" />
-        <img src="img/smiling.svg" alt="Smiling Face" />
-      </div>
-    </div>
-    <div class="eight">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-    </div>
-    <div class="nine">
-      <p>Giờ thì xoay qua đây nhận quà nè!</p>
-      <p id="replay">Bấm vô đây để xem lại nha.</p>
-      <p class="last-smile">:)</p>
-    </div>
-  </div>
 
-  <!-- Thư viện JavaScript -->
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  <script type="text/babel" src="script/main.js"></script>
+    <!-- Thư viện JavaScript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script type="text/babel" src="script/main.js"></script>
 
-  <!-- JavaScript để phát nhạc và ẩn nút -->
-  <script>
-    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-    var giftCardContainer = document.getElementById('giftCardContainer');
-    var container = document.querySelector('.container');
+    <!-- JavaScript để phát nhạc và ẩn nút -->
+    <script>
+        var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+        var giftCardContainer = document.getElementById('giftCardContainer');
+        var container = document.querySelector('.container');
 
-    // Function to start the animation and music
-    function startEverything() {
-      audio.play(); // Play music
-      giftCardContainer.style.display = 'none'; // Hide the start button
+        // Function to start the animation and music
+        function startEverything() {
+            audio.play(); // Play music
+            giftCardContainer.style.display = 'none'; // Hide the gift card
+            console.log("startEverything() called - music playing, gift card hidden"); //Debugging
 
-      // Wait for images to load, then fetch data and start animation
-      window.imagesLoaded(container)
-        .then(() => window.resolveFetch())
-        .then(() => {
-          window.createAnimationTimeline();
+            // Wait for images to load, then fetch data and start animation
+            window.resolveFetch().then(() => {
+                window.createAnimationTimeline();
+                console.log("Animation timeline created and (hopefully) running"); //More Debugging
+            });
+        }
+
+        // Add event listener to the gift card container
+        giftCardContainer.addEventListener('click', startEverything);
+
+        $(document).ready(function() {
+            $("#giftCardContainer").mouseenter(function() {
+                $(".card").stop().animate({
+                    top: "-90px"
+                }, "slow");
+            }).mouseleave(function() {
+                $(".card").stop().animate({
+                    top: 0
+                }, "slow");
+            });
         });
-    }
-
-    // Add event listener to the start button
-    giftCardContainer.addEventListener('click', startEverything);
-      });
-  </script>
+    </script>
 </body>
 </html>
