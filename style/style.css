@@ -350,6 +350,9 @@ body {
     top: 5px;
     left: 15px;
     box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+    display: flex; /* Added */
+    justify-content: center; /* Added */
+    align-items: center; /* Added */
 }
 
 .card:before {
@@ -364,14 +367,12 @@ body {
 }
 
 .text {
-    position: absolute;
+    position: static; /* Changed */
     font-family: 'Brush Script MT',
     cursive;
     font-size: 28px;
-    text-align: center;
-    line-height: 25px;
-    top: 19px;
-    left: 60px;
+    text-align: center; /* Keep This */
+    line-height: 1.2; /* Change pixel to ratio */
     color: #003049;
 }
 
