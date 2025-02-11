@@ -16,7 +16,11 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+.container {
+  /* Existing styles */
+  display: none; /* Hide the container initially */
+  autoAlpha: 0; //Hide the container initially
+}
 .container div.six {
   top: 10vh;
   z-index: 1;
