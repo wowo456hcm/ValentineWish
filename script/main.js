@@ -293,8 +293,20 @@ const fetchData = () => {
       });
     });
 };
+// Chạy fetchData() trước để tải dữ liệu tùy chỉnh
+resolveFetch();
 
-// Run fetch and animation in sequence
+// Bắt sự kiện khi nhấn nút "Mở quà"
+document.getElementById('startButton').addEventListener('click', function() {
+  // Phát nhạc
+  var audio = document.getElementById('backgroundMusic');
+  audio.play();
+
+  // Ẩn màn hình chào
+  document.getElementById('welcomeScreen').style.display = 'none';
+
+  // Bắt đầu hoạt ảnh
+  // Run fetch and animation in sequence
 const resolveFetch = () => {
   return new Promise((resolve, reject) => {
     fetchData();
@@ -302,3 +314,6 @@ const resolveFetch = () => {
   });
 };
 resolveFetch().then(animationTimeline());
+});
+
+
