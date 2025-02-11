@@ -12,31 +12,16 @@
   <title>雲雲點我!</title>
   <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
   <link rel="stylesheet" href="style/style.css" />
-  <style>
-    /* CSS để căn giữa nút */
-    #playButton {
-      position: fixed;
-      bottom: 20px; /* Đặt cách đáy trang 20px */
-      left: 50%; /* Đặt ngang giữa màn hình */
-      transform: translateX(-50%); /* Điều chỉnh để đảm bảo nó chính xác ở giữa */
-      padding: 20px 40px;
-      background-color: #ff69b4;
-      color: white;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 9999; /* Đảm bảo nút sẽ nằm trên các phần tử khác */
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Nút phát nhạc -->
-  <button id="playButton">Bấm tui!</button>
+  <!-- Màn hình chào -->
+  <div id="welcomeScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #ffe4e1; z-index: 10000; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h1 style="color: #ff1493; font-size: 2.5rem;">Một món quà đặc biệt dành cho bạn!</h1>
+    <button id="startButton" style="padding: 15px 30px; font-size: 1.5rem; background-color: #ff69b4; color: white; border: none; border-radius: 10px; cursor: pointer;">Mở quà</button>
+  </div>
 
-  <!-- Nội dung chính của trang -->
+ <!-- Nội dung chính của trang -->
   <div class="container">
     <div class="one">
       <h1 class="one">
@@ -132,20 +117,14 @@
     </div>
   </div>
 
+  <!-- Thẻ audio -->
+  <audio id="backgroundMusic">
+    <source src="music/music.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- Thư viện JavaScript -->
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
   <script type="text/babel" src="script/main.js"></script>
-
-  <!-- JavaScript để phát nhạc và ẩn nút -->
-  <script>
-    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-    
-    // Xử lý sự kiện khi bấm nút
-    document.getElementById('playButton').addEventListener('click', function() {
-      audio.play();  // Phát nhạc
-      this.style.display = 'none';  // Ẩn nút
-    });
-  </script>
 </body>
 </html>
