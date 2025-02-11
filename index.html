@@ -174,14 +174,17 @@
      }
 
      $(document).ready(function() {
-         $("#giftCardContainer").click(function() {
-             $(".card").stop().animate({
-                 top: "-120px" // Fly a little higher
-             }, "slow");
-             startEverything(); // Start the main animation too
-
-         });
-     });
- </script>
+            $("#giftCardContainer").click(function() {
+                $(".card").stop().animate({
+                    top: "-120px" // Fly a little higher
+                }, "slow", function() {
+                    // Animation complete callback
+                    setTimeout(function() {
+                        startEverything(); // Start the main animation after delay
+                    }, 500); // Delay of 500 milliseconds (0.5 seconds)
+                });
+            });
+        });
+    </script>
 </body>
 </html>
