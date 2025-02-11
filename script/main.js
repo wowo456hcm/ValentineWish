@@ -304,9 +304,12 @@ const resolveFetch = () => {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOMContentLoaded event fired");
+  console.log("Button click event listener added");
   const playButton = document.getElementById('playButton');
 
   playButton.addEventListener('click', function() {
+    console.log("resolveFetch() called"); 
     // Start the animation and fetch data
     resolveFetch().then(() => {
       animationTimeline();
