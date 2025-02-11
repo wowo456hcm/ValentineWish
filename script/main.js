@@ -1,4 +1,4 @@
-// Animation Timeline
+ // Animation Timeline
 const animationTimeline = () => {
   console.log("animationTimeline called");
   // Spit chars that needs to be animated individually
@@ -29,9 +29,9 @@ const animationTimeline = () => {
 
   const tl = new TimelineMax();
 
-tl.to(".container", 0.1, {
-    autoAlpha: 1, //Replaces visibility: 'visible'
-  })
+  // tl.to(".container", 0.1, {  //Remove this line
+  //   visibility: "visible",
+  // })
     .from(".one", 0.7, {
       opacity: 0,
       y: 10,
