@@ -1,16 +1,16 @@
 // Animation Timeline
 const animationTimeline = () => {
-  // Spit chars that needs to be animated individually
+  // Spit chars that need to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -60,7 +60,6 @@ const animationTimeline = () => {
     .from(".three", 0.7, {
       opacity: 0,
       y: 10,
-      // scale: 0.7
     })
     .to(
       ".three",
@@ -205,7 +204,6 @@ const animationTimeline = () => {
       {
         opacity: 0,
         y: -50,
-        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5),
@@ -265,9 +263,6 @@ const animationTimeline = () => {
       "+=1"
     );
 
-  // tl.seek("currentStep");
-  // tl.timeScale(2);
-
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
@@ -293,27 +288,26 @@ const fetchData = () => {
       });
     });
 };
-// Chạy fetchData() trước để tải dữ liệu tùy chỉnh
-resolveFetch();
 
-// Bắt sự kiện khi nhấn nút "Mở quà"
-document.getElementById('startButton').addEventListener('click', function() {
-  // Phát nhạc
-  var audio = document.getElementById('backgroundMusic');
-  audio.play();
-
-  // Ẩn màn hình chào
-  document.getElementById('welcomeScreen').style.display = 'none';
-
-  // Bắt đầu hoạt ảnh
-  // Run fetch and animation in sequence
+// Run fetchData before starting animation
 const resolveFetch = () => {
   return new Promise((resolve, reject) => {
     fetchData();
     resolve("Fetch done!");
   });
 };
-resolveFetch().then(animationTimeline());
+
+resolveFetch();
+
+// Wait for the user to click the "Mở quà" button
+document.getElementById('startButton').addEventListener('click', function() {
+  // Play music
+  var audio = new Audio('music/music.mp3');
+  audio.play();
+
+  // Hide the welcome screen
+  document.getElementById('welcomeScreen').style.display = 'none';
+
+  // Start the animation
+  animationTimeline();
 });
-
-
