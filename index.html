@@ -79,7 +79,7 @@
       </p>
     </div>
     <div class="six">
-      <img src="img/IMG_1593.jpg" alt="Girl Image" class="girl-dp" id="imagePath" />
+      <img src="img/vector.jpg" alt="Girl Image" class="girl-dp" id="imagePath" />
       <div class="wish">
         <h3 class="wish-hbd">情人節快樂</h3>
         <h5 id="wishText">kuch kuch</h5>
@@ -142,26 +142,26 @@
   <script type="text/babel" src="script/main.js"></script>
 
   <!-- JavaScript để phát nhạc và ẩn nút -->
-<script>
-  var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
-  var startButton = document.getElementById('startButton');
-  var container = document.querySelector('.container');
+  <script>
+    var audio = new Audio('https://github.com/wowo456hcm/ValentineWish/raw/refs/heads/main/music/music.mp3?raw=true');
+    var startButton = document.getElementById('startButton');
+    var container = document.querySelector('.container');
 
-  // Function to start the animation and music
-  function startEverything() {
-    audio.play(); // Play music
-    container.style.visibility = 'visible'; // Show the container
-    startButton.style.display = 'none'; // Hide the start button
+    // Function to start the animation and music
+    function startEverything() {
+      audio.play(); // Play music
+      container.style.visibility = 'visible'; // Show the container
+      startButton.style.display = 'none'; // Hide the start button
 
-    // Call the function that starts the animation (assuming it's in main.js)
-    resolveFetch().then(() => {
-      createAnimationTimeline();
-    });
+      // Call the function that starts the animation (assuming it's in main.js)
+      window.resolveFetch().then(() => {
+        window.createAnimationTimeline();
+      });
 
-  }
+    }
 
-  // Add event listener to the start button
-  startButton.addEventListener('click', startEverything);
-</script>
+    // Add event listener to the start button
+    startButton.addEventListener('click', startEverything);
+  </script>
 </body>
 </html>
