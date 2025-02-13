@@ -105,20 +105,20 @@ const createAnimationTimeline = () => {
             },
             "+=0.7"
         )
-        .from(".idea-1", 1, ideaTextTrans)
-        .to(".idea-1", 1, ideaTextTransLeave, "+=1.5")
-        .from(".idea-2", 1, ideaTextTrans)
-        .to(".idea-2", 1, ideaTextTransLeave, "+=1.5")
-        .from(".idea-3", 1, ideaTextTrans)
-        .to(".idea-3 strong", 1, {
+        .from(".idea-1", 0.5, ideaTextTrans)
+        .to(".idea-1", 0.5, ideaTextTransLeave, "+=1.5")
+        .from(".idea-2", 0.5, ideaTextTrans)
+        .to(".idea-2", 0.5, ideaTextTransLeave, "+=1.5")
+        .from(".idea-3", 0.5, ideaTextTrans)
+        .to(".idea-3 strong", 0.5, {
             scale: 1.2,
             x: 10,
             backgroundColor: "rgb(21, 161, 237)",
             color: "#fff",
         })
-        .to(".idea-3", 1, ideaTextTransLeave, "+=1.5")
-        .from(".idea-4", 1, ideaTextTrans)
-        .to(".idea-4", 1, ideaTextTransLeave, "+=1.5")
+        .to(".idea-3", 0.5, ideaTextTransLeave, "+=1.5")
+        .from(".idea-4", 0.5, ideaTextTrans)
+        .to(".idea-4",0.51, ideaTextTransLeave, "+=1.5")
         .from(
             ".idea-5",
             1,
