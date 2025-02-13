@@ -36,11 +36,11 @@ const createAnimationTimeline = () => {
       .to(".container", 0.1, {
         visibility: "visible",
     })
-        .from(".one", 0.7, {
+        .from(".one", 1, {
             opacity: 0,
             y: 10,
         })
-        .from(".two", 0.4, {
+        .from(".two", 0.8, {
             opacity: 0,
             y: 10,
         })
@@ -62,7 +62,7 @@ const createAnimationTimeline = () => {
             },
             "-=1"
         )
-        .from(".three", 0.7, {
+        .from(".three", 1, {
             opacity: 0,
             y: 10,
             // scale: 0.7
@@ -76,11 +76,11 @@ const createAnimationTimeline = () => {
             },
             "+=2"
         )
-        .from(".four", 0.7, {
+        .from(".four", 1, {
             scale: 0.2,
             opacity: 0,
         })
-        .from(".fake-btn", 0.3, {
+        .from(".fake-btn", 0.6, {
             scale: 0.2,
             opacity: 0,
         })
@@ -188,7 +188,7 @@ const createAnimationTimeline = () => {
         )
         .from(
             ".girl-dp",
-            0.5,
+            1,
             {
                 scale: 3.5,
                 opacity: 0,
@@ -198,7 +198,7 @@ const createAnimationTimeline = () => {
             },
             "-=2"
         )
-        .from(".hat", 0.5, {
+        .from(".hat", 1, {
             x: -100,
             y: 350,
             rotation: -180,
@@ -235,7 +235,7 @@ const createAnimationTimeline = () => {
         )
         .from(
             ".wish h5",
-            0.5,
+            1,
             {
                 opacity: 0,
                 y: 10,
@@ -245,7 +245,7 @@ const createAnimationTimeline = () => {
         )
         .staggerTo(
             ".eight svg",
-            1.5,
+            2,
             {
                 visibility: "visible",
                 opacity: 0,
