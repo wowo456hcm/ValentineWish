@@ -97,7 +97,7 @@ const createAnimationTimeline = () => {
         })
         .to(
             ".four",
-            1,
+            0.4,
             {
                 scale: 0.2,
                 opacity: 0,
