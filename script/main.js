@@ -33,7 +33,7 @@ const createAnimationTimeline = () => {
     tl = new TimelineMax();  // Assign to the global tl
 
     tl.set(".container", { visibility: "hidden" }) // Initially hide using GSAP
-      .to(".container", 0.1, {
+      .to(".container", 0.3, {
         visibility: "visible",
     })
         .from(".one", 1, {
@@ -92,12 +92,12 @@ const createAnimationTimeline = () => {
             },
             0.05
         )
-        .to(".fake-btn", 0.1, {
+        .to(".fake-btn", 0.3, {
             backgroundColor: "rgb(127, 206, 248)",
         })
         .to(
             ".four",
-            0.5,
+            0.7,
             {
                 scale: 0.2,
                 opacity: 0,
@@ -110,15 +110,15 @@ const createAnimationTimeline = () => {
         .from(".idea-2", 0.7, ideaTextTrans)
         .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
         .from(".idea-3", 0.7, ideaTextTrans)
-        .to(".idea-3 strong", 0.5, {
+        .to(".idea-3 strong", 1, {
             scale: 1.2,
             x: 10,
             backgroundColor: "rgb(21, 161, 237)",
             color: "#fff",
         })
-        .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
-        .from(".idea-4", 0.7, ideaTextTrans)
-        .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
+        .to(".idea-3", 1, ideaTextTransLeave, "+=1.5")
+        .from(".idea-4", 1, ideaTextTrans)
+        .to(".idea-4", 1, ideaTextTransLeave, "+=1.5")
         .from(
             ".idea-5",
             0.7,
@@ -134,7 +134,7 @@ const createAnimationTimeline = () => {
         )
         .to(
             ".idea-5 span",
-            0.7,
+            1,
             {
                 rotation: 90,
                 x: 8,
@@ -143,7 +143,7 @@ const createAnimationTimeline = () => {
         )
         .to(
             ".idea-5",
-            0.7,
+            1,
             {
                 scale: 0.2,
                 opacity: 0,
@@ -206,7 +206,7 @@ const createAnimationTimeline = () => {
         })
         .staggerFrom(
             ".wish-hbd span",
-            0.7,
+            1,
             {
                 opacity: 0,
                 y: -50,
@@ -215,11 +215,11 @@ const createAnimationTimeline = () => {
                 skewX: "30deg",
                 ease: Elastic.easeOut.config(1, 0.5),
             },
-            0.1
+            0.4
         )
         .staggerFromTo(
             ".wish-hbd span",
-            0.7,
+            1,
             {
                 scale: 1.4,
                 rotationY: 150,
@@ -230,7 +230,7 @@ const createAnimationTimeline = () => {
                 color: "#ff69b4",
                 ease: Expo.easeOut,
             },
-            0.1,
+            0.4,
             "party"
         )
         .from(
@@ -253,7 +253,7 @@ const createAnimationTimeline = () => {
                 repeat: 3,
                 repeatDelay: 1.4,
             },
-            0.3
+            0.6
         )
         .to(".six", 0.5, {
             opacity: 0,
@@ -263,7 +263,7 @@ const createAnimationTimeline = () => {
         .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
         .to(
             ".last-smile",
-            0.5,
+            1,
             {
                 rotation: 90,
             },
